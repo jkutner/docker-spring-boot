@@ -1,5 +1,7 @@
 version: '2'
 services:
+  postgres:
+    image: postgres:9.5
   web:
     build: .
     command: "./gradlew bootRun"
@@ -8,6 +10,8 @@ services:
       - ~/.gradle/:/root/.gradle/
     ports:
       - "8080:8080"
+    depends_on:
+      - postgres
   shell:
     build: .
     command: bash
