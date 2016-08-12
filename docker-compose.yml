@@ -1,6 +1,6 @@
 version: '2'
 services:
-  postgres:
+  db:
     image: postgres:9.5
   web:
     build: .
@@ -11,7 +11,9 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - postgres
+      - db
+    environment:
+      JDBC_DATABASE_URL: jdbc:postgresql://db:5432/postgres?user=postgres
   shell:
     build: .
     command: bash
