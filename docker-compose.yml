@@ -8,9 +8,3 @@ services:
       - ~/.gradle/:/root/.gradle/
     ports:
       - "8080:8080"
-  shell:
-    build: .
-    command: bash
-    volumes:
-      - .:/app/
-      - ~/.gradle/:/root/.gradle/
