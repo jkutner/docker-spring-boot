@@ -12,7 +12,7 @@ public class DemoApplication {
   @RequestMapping("/")
   @ResponseBody
   String home() {
-    return "Hello from Spring Boot with Dev-Tools!";
+    return "Hello from Spring Boot!";
   }
 
   public static void main(String[] args) {
